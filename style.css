@@ -73,10 +73,16 @@ body {
 }
 
 .letter-content {
+  max-height: 0;
+  overflow: hidden;
+  font-family: 'Indie Flower', cursive; /* handwritten style */
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.6;
+  color: #5a3d2b;
+  padding: 0 20px;
   text-align: left;
-  font-family: 'Gloria Hallelujah', cursive;
+  transition: max-height 1.2s ease-in-out, padding 1s ease-in-out;
+  white-space: pre-line; /* keeps line breaks */
 }
 .letter-content h1 {
   font-family: 'Press Start 2P', cursive;
@@ -84,6 +90,14 @@ body {
   text-align: center;
   margin-bottom: 15px;
   color: #a67c52;
+}
+
+.letter.open .letter-content {
+  max-height: 2000px;   /* adjust depending on text length */
+  padding: 20px;
+  overflow-y: auto; /* allows scrolling if it's still too big */
+  scrollbar-width: thin;
+  scrollbar-color: #d2a679 #f9e4c8;
 }
 
 /* Flying Emojis */
@@ -110,3 +124,4 @@ body {
     opacity: 0;
   }
 }
+
